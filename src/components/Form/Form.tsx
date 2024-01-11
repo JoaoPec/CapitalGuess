@@ -6,6 +6,7 @@ interface FormProps {
 }
 
 const Form = ({ country: initialCountry }: FormProps) => {
+
     const [guess, setGuess] = useState<string>('');
     const [country, setCountry] = useState<string | undefined>(initialCountry);
     const [capital, setCapital] = useState<string | undefined>(undefined);
@@ -37,6 +38,7 @@ const Form = ({ country: initialCountry }: FormProps) => {
     };
 
     const handleGuessSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+        
         event.preventDefault();
 
         if (guess === capital) {
