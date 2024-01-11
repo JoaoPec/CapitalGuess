@@ -52,6 +52,7 @@ app.get("/", async (req, res) => {
 app.get("/api/getCountry", async (req: Request, res: Response) => {
     try {
         const result = await db.query("SELECT * FROM world ORDER BY RANDOM() LIMIT 1");
+        console.log(result.rows)
         const randomCountry = result.rows[0];
         res.json(randomCountry);
     } catch (err) {
